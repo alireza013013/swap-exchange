@@ -1,0 +1,46 @@
+@use " ../../../../../../styles/references/index" as style;
+
+.main-services {
+    width: 95%;
+    max-width: style.$max-width-contianer;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    border-radius: 24px;
+    margin-top: 80px;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 10px;
+    @include style.responsive-size(justify-content, space-around, center, center, center);
+    @include style.responsive-size(height, 190px, unset, unset, unset);
+    @include style.responsive-size(background-color, style.$second-background, transparent, transparent, transparent);
+
+    .box-service {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 24px;
+        @include style.responsive-size(height, 190px, 190px, 140px, 140px);
+        @include style.responsive-size(width, unset, 45%, 45%, 48%);
+        @include style.responsive-size(
+            background-color,
+            transparent,
+            style.$second-background,
+            style.$second-background,
+            style.$second-background
+        );
+        @include style.responsive-size(align-items, flex-start, center, center, center);
+
+        .extra {
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            column-gap: 10px;
+            white-space: nowrap;
+            img {
+                @include style.responsive-size(width, 50px, 50px, 30px, 20px);
+                @include style.responsive-size(height, 50px, 50px, 30px, 20px);
+            }
+        }
+    }
+}

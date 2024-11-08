@@ -1,0 +1,42 @@
+@use " ../../../../../../styles/references/index" as style;
+
+.main-news {
+    width: 95%;
+    max-width: style.$max-width-contianer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    margin-top: 40px;
+    .title-link {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .link {
+            display: flex;
+            align-items: center;
+            column-gap: 8px;
+            color: style.$green;
+            font-weight: 400;
+            cursor: pointer;
+            @include style.responsive-size(font-size, 20px, 20px, 14px, 14px);
+            img {
+                @include style.responsive-size(width, 24px, 24px, 16px, 16px);
+                @include style.responsive-size(height, 24px, 24px, 16px, 16px);
+            }
+        }
+    }
+    .cards {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        row-gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        @include style.responsive-size(justify-content, space-between, space-between, space-between, center);
+    }
+}

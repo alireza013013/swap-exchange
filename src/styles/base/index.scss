@@ -1,0 +1,82 @@
+@use "../references/index" as style;
+
+@font-face {
+  font-family: IRANSansX;
+  font-style: normal;
+  font-weight: 900;
+  src: url("../../assets/fonts/IRANSansXExtraBold.ttf");
+}
+
+@font-face {
+  font-family: IRANSansX;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../assets/fonts/IRANSansXBold.ttf");
+}
+
+@font-face {
+  font-family: IRANSansX;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../assets/fonts/IRANSansXLight.ttf");
+}
+
+@font-face {
+  font-family: IRANSansX;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/IRANSansXMedium.ttf");
+}
+
+@font-face {
+  font-family: IRANSansX;
+  font-style: normal;
+  font-weight: 200;
+  src: url("../../assets/fonts/IRANSansXThin.ttf");
+}
+
+:root {
+  font-family: "IRANSansX";
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100%;
+  scroll-behavior: smooth;
+  background-color: #121419;
+  font-family: "IRANSansX";
+}
+
+.title {
+  font-weight: 700;
+  color: style.$white;
+  @include style.responsive-size(font-size, 36px, 36px, 24px, 24px);
+}
+
+.subtitle {
+  font-weight: 700;
+  color: style.$white;
+  @include style.responsive-size(font-size, 32px, 32px, 18px, 17px);
+}
+
+.normal-text {
+  font-weight: 700;
+  color: style.$white;
+  font-size: 16px;
+}
+
+.description {
+  font-weight: 400;
+  color: style.$white;
+  @include style.responsive-size(font-size, 20px, 20px, 14px, 12px);
+  @include style.responsive-size(line-height, 30px, 30px, 20px, 20px);
+}

@@ -1,0 +1,211 @@
+@use "../../styles/references/index" as style;
+
+.main-header {
+    width: 95%;
+    max-width: style.$max-width-contianer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    .logo-link-search {
+        display: flex;
+        align-items: center;
+        @include style.responsive-size(column-gap, 24px, 16px, 24px, 24px);
+
+        .logo {
+            font-weight: 900;
+            color: style.$main-color;
+            @include style.responsive-size(font-size, 40px, 30px, 40px, 30px);
+        }
+        .link-nav {
+            text-decoration: none;
+            font-weight: 400;
+            color: style.$white;
+            @include style.responsive-size(font-size, 20px, 16px, 20px, 20px);
+            @include style.responsive-size(display, flex, flex, none, none);
+        }
+        .search-input {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: style.$white;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            padding: 8px 16px;
+            font-size: 20px;
+            font-family: style.$font-family;
+            font-weight: 400;
+            @include style.responsive-size(width, unset, 150px, 100px, 100px);
+            @include style.responsive-size(display, flex, flex, none, none);
+
+            &::placeholder {
+                color: style.$white;
+                font-size: 20px;
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+                font-family: style.$font-family;
+            }
+
+            &:focus {
+                border: none;
+                outline: none;
+            }
+        }
+    }
+
+    .buttons {
+        display: flex;
+        column-gap: 8px;
+        align-items: center;
+        row-gap: 10px;
+        justify-content: flex-end;
+
+        .outlined-button {
+            width: 180px;
+            height: 54px;
+            border: 2px solid style.$main-color;
+            color: style.$main-color;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: style.$font-family;
+            cursor: pointer;
+            flex-direction: row-reverse;
+            background-color: style.$second-background;
+            @include style.responsive-size(width, 180px, 140px, 48px, 48px);
+            @include style.responsive-size(height, 54px, 44px, 48px, 48px);
+            @include style.responsive-size(font-size, 20px, 16px, 16px, 16px);
+            @include style.responsive-size(border-radius, 16px, 10px, 16px, 16px);
+            img {
+                @include style.responsive-size(margin-left, 10px, 10px, 0, 0);
+                @include style.responsive-size(width, 30px, 20px, 20px, 20px);
+                @include style.responsive-size(height, 30px, 20px, 20px, 20px);
+            }
+            span {
+                @include style.responsive-size(display, flex, flex, none, none);
+            }
+            &:active {
+                transform: scale(0.98);
+            }
+        }
+
+        .phone-button {
+            border: 2px solid style.$white;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background-color: style.$second-background;
+            @include style.responsive-size(width, 180px, 140px, 48px, 48px);
+            @include style.responsive-size(height, 54px, 44px, 48px, 48px);
+            @include style.responsive-size(border-radius, 16px, 10px, 16px, 16px);
+            @include style.responsive-size(display, none, none, flex, flex);
+            img {
+                @include style.responsive-size(width, 30px, 20px, 20px, 20px);
+                @include style.responsive-size(height, 30px, 20px, 20px, 20px);
+            }
+            &:active {
+                transform: scale(0.98);
+            }
+        }
+
+        .input-search-container {
+            min-width: 44px;
+            height: 44px;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid style.$white;
+            background-color: style.$second-background;
+            border-radius: 16px;
+            font-family: style.$font-family;
+
+            @include style.responsive-size(display, none, none, flex, flex);
+
+            .input-search {
+                width: 0;
+                height: 48px;
+                padding: 0;
+                font-size: 20px;
+                transition: width 0.3s ease;
+                background-color: transparent;
+                color: style.$white;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                font-family: style.$font-family;
+
+                &.open {
+                    padding: 0 40px 0 12px;
+                    width: 70px;
+                    cursor: text;
+                }
+            }
+
+            .handle {
+                position: absolute;
+                background: none;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include style.responsive-size(width, 30px, 20px, 20px, 20px);
+                @include style.responsive-size(height, 30px, 20px, 20px, 20px);
+            }
+
+            .close {
+                right: 12px;
+            }
+        }
+    }
+}
+
+.main-nav {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: fixed;
+    background-color: rgb(18 20 25 / 63%);
+    z-index: 5;
+    .nav {
+        width: 200px;
+        height: calc(100% - 20px);
+        background-color: rgb(27 31 43 / 87%);
+        border-radius: 0 20px 20px 0;
+        position: fixed;
+        left: 0;
+        z-index: 6;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px;
+        .close-button {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .nav-item {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+            row-gap: 10px;
+            .link-nav {
+                color: style.$white;
+                font-size: 24px;
+                font-weight: 700;
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,232 @@
+@use " ../../../../../../styles/references/index" as style;
+
+.main-top-landing {
+    width: 95%;
+    max-width: style.$max-width-contianer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 40px;
+    margin-top: 40px;
+    @include style.responsive-size(flex-direction, row, row, column, column);
+
+    .title-description {
+        display: flex;
+        flex-direction: column;
+        @include style.responsive-size(align-items, flex-start, flex-start, center, center);
+        @include style.responsive-size(width, 50%, 40%, 100%, 100%);
+
+        .extra {
+            @include style.responsive-size(text-align, start, start, center, center);
+        }
+    }
+
+    .box-exchange {
+        max-width: 370px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 10px;
+
+        .buttons-refresh {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            .tabs {
+                display: flex;
+                align-items: center;
+                column-gap: 12px;
+                .tab {
+                    padding: 0 14px;
+                    border: none;
+                    color: style.$deactive-color;
+                    font-weight: 700;
+                    font-family: style.$font-family;
+                    cursor: pointer;
+                    background-color: style.$second-background;
+                    height: 46px;
+                    position: relative;
+                    @include style.responsive-size(font-size, 16px, 16px, 16px, 16px);
+                    @include style.responsive-size(border-radius, 16px, 16px, 16px, 16px);
+                    &:active {
+                        transform: scale(0.98);
+                    }
+                    .badge {
+                        font-weight: 700;
+                        font-size: 10px;
+                        color: style.$main-background;
+                        background-color: rgba(85, 99, 141, 1);
+                        position: absolute;
+                        border-radius: 8px;
+                        padding: 6px 10px;
+                        top: -14px;
+                        text-wrap: nowrap;
+                        left: 10%;
+                    }
+                }
+                .active {
+                    color: style.$white;
+                    background-color: style.$main-color;
+                }
+            }
+            .refresh {
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                background-color: style.$second-background;
+                width: 48px;
+                height: 48px;
+                border-radius: 16px;
+                img {
+                    @include style.responsive-size(width, 30px, 20px, 20px, 20px);
+                    @include style.responsive-size(height, 30px, 20px, 20px, 20px);
+                }
+                &:active {
+                    transform: scale(0.98);
+                }
+            }
+        }
+
+        .box-token {
+            width: calc(100% - 40px);
+            padding: 10px 20px 0 20px;
+            min-height: 158px;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            background-color: style.$second-background;
+            position: relative;
+
+            .title-box {
+                font-size: 14px;
+                font-weight: 700;
+                color: style.$deactive-color;
+            }
+            .inputs-name-token {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                margin-top: 10px;
+                flex-direction: row-reverse;
+                flex-wrap: wrap;
+                row-gap: 10px;
+
+                .input-amount {
+                    border: none;
+                    width: 60%;
+                    direction: ltr;
+                    background-color: transparent;
+                    color: style.$white;
+                    font-size: 30px;
+                    font-weight: 200;
+                    font-family: style.$font-family;
+
+                    &:focus {
+                        border: none;
+                        outline: none;
+                    }
+                    &::placeholder {
+                        color: style.$deactive-color;
+                        font-size: 30px;
+                        font-weight: 200;
+                    }
+                }
+
+                .image-name-token {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: style.$main-background;
+                    color: style.$white;
+                    font-size: 20px;
+                    font-weight: 200;
+                    flex-direction: row-reverse;
+                    column-gap: 6px;
+                    padding: 6px 10px;
+                    border-radius: 8px;
+                    img {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+
+            .title-fee {
+                font-size: 10px;
+                font-weight: 700;
+                color: style.$white;
+                position: absolute;
+                right: 20px;
+                bottom: 20px;
+                .amount-fee {
+                    color: style.$main-color;
+                }
+            }
+
+            .change-tokens {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                position: absolute;
+                background-color: rgb(9 14 30 / 95%);
+                border: 3px solid rgba(15, 17, 24, 0.28);
+                bottom: -20px;
+                right: 40%;
+                z-index: 4;
+                cursor: pointer;
+
+                &:active {
+                    transform: scale(0.98);
+                }
+            }
+        }
+
+        .input-wallet {
+            border: none;
+            width: calc(100% - 40px);
+            background-color: style.$second-background;
+            color: style.$white;
+            font-size: 14px;
+            font-weight: 400;
+            height: 50px;
+            border-radius: 16px;
+            padding: 0 20px;
+            &:focus {
+                border: none;
+                outline: none;
+            }
+            &::placeholder {
+                color: style.$deactive-color;
+                font-size: 14px;
+                font-weight: 400;
+            }
+        }
+
+        .submit {
+            width: 100%;
+            height: 50px;
+            border: none;
+            color: style.$white;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: style.$font-family;
+            cursor: pointer;
+            background-color: style.$main-color;
+            font-size: 16px;
+            border-radius: 16px;
+
+            &:active {
+                transform: scale(0.98);
+            }
+        }
+    }
+}
