@@ -56,10 +56,17 @@ body {
   font-family: "IRANSansX";
 }
 
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+img {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .title {
   font-weight: 700;
   color: style.$white;
-  @include style.responsive-size(font-size, 36px, 36px, 24px, 24px);
+  @include style.responsive-size(font-size, 36px, 36px, 24px, 22px);
 }
 
 .subtitle {

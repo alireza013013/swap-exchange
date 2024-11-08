@@ -3,6 +3,7 @@ import refresh from "../../../../assets/icons/refresh.svg"
 import change from "../../../../assets/icons/change.svg"
 import toman from "../../../../assets/toman.svg"
 import trx from "../../../../assets/trx.svg"
+import InputAmount from '../../../../components/inputAmount/inputAmount'
 
 const TopOfLanding = () => {
     return (
@@ -29,7 +30,7 @@ const TopOfLanding = () => {
                 <div className='box-token first'>
                     <span className='title-box'>تبادل</span>
                     <div className='inputs-name-token'>
-                        <input placeholder='500,000' type="text" className='input-amount' />
+                        <InputAmount />
                         <div className='image-name-token'>
                             TOMAN
                             <img src={toman} alt="token" />
@@ -48,7 +49,7 @@ const TopOfLanding = () => {
                 <div className='box-token second'>
                     <span className='title-box'>خرید</span>
                     <div className='inputs-name-token'>
-                        <input placeholder='500,000' type="text" className='input-amount' />
+                        <InputAmount />
                         <div className='image-name-token'>
                             TRX
                             <img src={trx} alt="token" />

@@ -1,0 +1,22 @@
+@use "../../styles/references/index" as style;
+
+.input-amount {
+    border: none;
+    width: 60%;
+    direction: ltr;
+    background-color: transparent;
+    color: style.$white;
+    font-size: 30px;
+    font-weight: 200;
+    font-family: style.$font-family;
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+    &::placeholder {
+        color: style.$deactive-color;
+        font-size: 30px;
+        font-weight: 200;
+    }
+}

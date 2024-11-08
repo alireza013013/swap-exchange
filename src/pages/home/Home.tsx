@@ -6,7 +6,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadAll } from "@tsparticles/all";
 import News from './components/news/News';
-
+import Questions from './components/questions/Questions';
 
 const Home = () => {
     const [init, setInit] = useState(false);
@@ -100,6 +100,7 @@ const Home = () => {
             <Banner />
             <Services />
             <News />
+            <Questions />
         </div>
     )
 }

@@ -1,0 +1,68 @@
+@use " ../../../../../../styles/references/index" as style;
+
+.main-questions {
+    width: 95%;
+    max-width: style.$max-width-contianer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 40px;
+    margin-top: 40px;
+    @include style.responsive-size(flex-direction, row, row, column, column);
+
+    .texts {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        @include style.responsive-size(align-items, flex-start, flex-start, center, center);
+        @include style.responsive-size(width, 38%, 38%, 100%, 100%);
+
+        .desktop {
+            @include style.responsive-size(display, flex, flex, none, none);
+        }
+    }
+    .parallex-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 10px;
+        @include style.responsive-size(width, 60%, 60%, 100%, 100%);
+
+        .parallex-div {
+            width: calc(100% - 32px);
+            border-radius: 12px;
+            background-color: style.$second-background;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 16px;
+            row-gap: 10px;
+            transition: all;
+            position: relative;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            img {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                left: 10px;
+                top: 20px;
+                transition: all;
+            }
+            .open {
+                transform: rotateZ(180deg);
+            }
+            .extra {
+                font-weight: 400;
+                color: style.$white;
+                font-size: 12px;
+            }
+        }
+    }
+
+    .mobile {
+        width: 100%;
+        text-align: start;
+        @include style.responsive-size(display, none, none, flex, flex);
+    }
+}
